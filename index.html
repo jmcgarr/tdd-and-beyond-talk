@@ -61,20 +61,28 @@
 		<li class="slide">Reduces new bugs</li>
 		<li class="slide">Reduces bug regressions</li>
 		<li class="slide">Refactoring</li>
+		<li class="slide">Improves your design</li>
 		<li class="slide">Behavior focus</li>
 		<li class="slide">Enables evolutionary design</li>
 		<li class="slide">Reduces fear</li>
 		<li class="slide">Speeds the development process</li>
-		<li class="slide">Tests as Documentation</li>
+		<li class="slide">Tests as documentation</li>
 	</ul>
 </section>
 <section class="slide">
-	<h2>Types of Tests</h2>
-	<embed src="img/types-of-tests.svg" type="image/svg+xml" />
+	<h2>Benefits of test automation</h2>
+	<blockquote cite="http://www.amazon.com/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052">
+		<p>Code without tests is bad code. It doesn't matter how well written it is; it doesn't matter how pretty or object-oriented or well-encapsulated it is. With tests, we can change the behavior of our code quickly and verifiably. Without them, we really don't know if our code is getting better or worse.</p>
+		<p><cite>Michael Feathers (2008). Working Effectively with Legacy Code</cite></p>
+	</blockquote>
 </section>
 <section class="slide">
 	<h2>Test Automation Strategy</h2>
 	<img src="img/testing.png"/>
+</section>
+<section class="slide">
+	<h2>Types of Tests</h2>
+	<embed src="img/types-of-tests.svg" type="image/svg+xml" />
 </section>
 <section class="slide">
 	<h2>Testing Pyramid</h2>
@@ -99,57 +107,41 @@
 	</ul>
 </section>
 <section class="slide">
-	<h2>Smells like an Integration Test</h2>
-	<ul>
-		<li></li>
+	<h2>Unit Test Smells</h2>
+	<img src="img/teen-spirit.jpg" width="40%" height="40%" style="float:left"/>
+	<ul style="float: right">
+		<li>...my unit test take too long</li>
+		<li>...need a database to run</li>
+		<li>...I need a network connection</li>
+		<li>...we use JUnit, so yes we write unit tests</li>
 	</ul>
 </section>
 <section class="slide">
 	<h2>FIRST</h2>
 	<ul>
-		<li><strong>F</strong>ast</li>
-		<li><strong>I</strong>solated</li>
-		<li><strong>R</strong>epeatable</li>
-		<li><strong>S</strong>elf-Verifying</li>
-		<li><strong>T</strong>imely</li>
+		<li><strong>F</strong>ast - less than 1/10 second</li>
+		<li><strong>I</strong>ndependent - test one thing (single assert)</li>
+		<li><strong>R</strong>epeatable - reliably repeatable</li>
+		<li><strong>S</strong>elf-Verifying - red or green</li>
+		<li><strong>T</strong>imely - test written before production code</li>
 	</ul>
 	<p>http://pragprog.com/magazines/2012-01/unit-tests-are-first</p>
 </section>
 <section class="slide">
 	<h2>Principles of Writing Good Tests</h2>
 	<ul>
-		<li></li>
+		<li>Test everything that could break</li>
+		<li>Test everything that does break</li>
+		<li>New code is guilty until proven innocent</li>
+		<li>Write at least as much test code as production code</li>
+		<li>Run local tests with each compile</li>
+		<li>Run all tests before check-in to repository</li>
+		<li>A single assertion per test method</li>
 	</ul>
 </section>
 <section class="slide">
-	<h2>Benefits of Unit Tests</h2>
-	<ul>
-		<li>Reduces new bugs</li>
-		<li>Reduces bug regressions</li>
-		<li>Refactoring</li>
-		<li>Behavior focus</li>
-		<li>Enables evolutionary design</li>
-		<li>Reduces fear</li>
-		<li>Speeds the development process</li>
-		<li>Tests as Documentation</li>
-	</ul>
+	<h1>Unit Test Example</h1>
 </section>
-<section class="slide">
-	<h2>Benefits of Unit Tests</h2>
-	<blockquote cite="http://www.amazon.com/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052">
-		<p>Code without tests is bad code. It doesn't matter how well written it is; it doesn't matter how pretty or object-oriented or well-encapsulated it is. With tests, we can change the behavior of our code quickly and verifiably. Without them, we really don't know if our code is getting better or worse.</p>
-		<p><cite>Michael Feathers (2008). Working Effectively with Legacy Code</cite></p>
-	</blockquote>
-</section>
-<section class="slide">
-	<h2>Good Design - Coupling</h2>
-	<embed src="img/design-coupling.svg" type="image/svg+xml" />
-</section>
-<section class="slide">
-	<h2>Good Design - Coherence</h2>
-	<embed src="img/design-coherence.svg" type="image/svg+xml" />
-</section>
-
 
 
 <section class="slide">
@@ -193,9 +185,6 @@
 		<li></li>
 	</ul>
 </section>
-<section class="slide">
-	<h1>Live Coding</h1>
-</section>
 
 
 
@@ -215,6 +204,18 @@
 	<ul>
 		<li></li>
 	</ul>
+</section>
+<section class="slide">
+	<h2>Testable Design = Good Design</h2>
+	<img src="img/mcescher.jpg"/>
+</section>
+<section class="slide">
+	<h2>Good Design - Coupling</h2>
+	<embed src="img/design-coupling.svg" type="image/svg+xml" />
+</section>
+<section class="slide">
+	<h2>Good Design - Coherence</h2>
+	<embed src="img/design-coherence.svg" type="image/svg+xml" />
 </section>
 <section class="slide">
 	<h2>Refactor for Testability</h2>
