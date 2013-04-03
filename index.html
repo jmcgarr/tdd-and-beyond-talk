@@ -52,6 +52,8 @@
 	<ul>
 		<li class="slide">Manually testing code is slow</li>
 		<li class="slide">Manually testing code is error-prone</li>
+		<li class="slide">Manually testing code is not scalable</li>
+		<li class="slide">Manually testing code is not repeatable</li>
 		<li class="slide">Releasing code can be scary</li>
 	</ul>
 </section>
@@ -107,13 +109,13 @@
 	</ul>
 </section>
 <section class="slide">
-	<h2>Unit Test Smells</h2>
+	<h2>My Unit test...</h2>
 	<img src="img/teen-spirit.jpg" width="40%" height="40%" style="float:left"/>
 	<ul style="float: right">
-		<li>...my unit test take too long</li>
-		<li>...need a database to run</li>
-		<li>...I need a network connection</li>
-		<li>...we use JUnit, so yes we write unit tests</li>
+		<li>...takes too long</li>
+		<li>...needs a database to run</li>
+		<li>...needs a network connection</li>
+		<li>...is written in JUnit, therefore is a unit test</li>
 	</ul>
 </section>
 <section class="slide">
@@ -148,7 +150,27 @@
 	<h1>Test Doubles</h1>
 </section>
 <section class="slide">
-	<h2>What are Test Doubles</h2>
+	<h2>Test Doubles</h2>
+	<ul>
+		<li>CUT has collaborating classes (left)</li>
+		<li>During unit testing, we need to replace these classes (right)</li>
+	</ul>
+	<img src="img/mock-objects.png" width="50%" height="50%" style="float: left"/>
+	<img src="img/mockery.png" width="50%" height="50%" style="float: right"/>
+</section>
+<section class="slide">
+	<h2>Test Doubles</h2>
+	<img src="img/test-double.gif"/>
+	<ul>
+		<li><strong>Dummy</strong> - objects passed around, not used</li>
+		<li><strong>Spy</strong> - records information during test</li>
+		<li><strong>Fake</strong> - fully functionally, w/shortcuts (ie. - in memory database)</li>
+		<li><strong>Stub</strong> - canned (hardcoded) responses</li>
+		<li><strong>Mock</strong> - object w/ expectations/verifications</li>
+	</ul>
+</section>
+<section class="slide">
+	<h2>Stubs</h2>
 	<ul>
 		<li></li>
 	</ul>
@@ -159,7 +181,12 @@
 		<li></li>
 	</ul>
 </section>
-
+<section class="slide">
+	<h2>Mocking Frameworks</h2>
+	<ul>
+		<li></li>
+	</ul>
+</section>
 
 
 
