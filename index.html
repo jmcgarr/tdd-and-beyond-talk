@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=1024, user-scalable=no">
+	<meta name="viewport" content="width=800, user-scalable=no">
 
 	<title>Unit Testing, TDD and Beyond - by Mike McGarr</title>
 	
@@ -19,11 +19,30 @@
 	<link rel="stylesheet" href="extensions/scale/deck.scale.css">
 
 	<!-- Style theme. More available in /themes/style/ or create your own. -->
-	<link rel="stylesheet" href="themes/style/swiss.css">
+	<link rel="stylesheet" href="themes/style/web-2.0.css">
 	
 	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
 	<link rel="stylesheet" href="themes/transition/vertical-slide.css">
-	
+		
+	<!-- Custom styles -->
+	<style type="text/css">
+
+        .slide h1, .slide h2 {text-align: left;}
+        p.little-bigger {font-size: 1.6em; margin-bottom: .25em;}
+        ul.subbullet {font-size: .5em;}
+        ul.little-bigger li {font-size: 1.6em; margin-bottom: .25em;}
+        ul.bigger li {font-size: 1.8em; margin-bottom: .25em;}
+        .deck-container .slide a, .deck-container .slide a:hover, .deck-container .slide a:focus, .deck-container .slide a:active, .deck-container .slide a:visited {
+       		color: #0060B6; text-decoration: underline;
+      	}
+        .img-border {
+          -webkit-box-shadow: 0 0 20px #000, 0 0 5px #fff;
+          -moz-box-shadow: 0 0 20px #000, 0 0 5px #fff;
+          box-shadow: 0 0 20px #000, 0 0 5px #fff;
+        }
+    
+	</style>
+
 	<!-- Required Modernizr file -->
 	<script src="modernizr.custom.js"></script>
 </head>
@@ -38,7 +57,7 @@
 </section>
 <section class="slide">
 	<h2>About Me</h2>
-	<ul>
+	<ul class="little-bigger">
 		<li>J. Michael McGarr</li>
 		<li>Director of DevOps (Learn) at Blackboard</li>
 		<li>Software Engineer for 12+ years</li>
@@ -48,27 +67,39 @@
 	<img style="float: right;" src="img/Blackboard_Learn.jpg"/>
 </section>
 <section class="slide">
+	<h2>Agenda</h2>
+	<ul class="little-bigger">
+		<li>Intro to Test Automation</li>
+		<li>Unit Testing</li>
+		<li>Test Doubles</li>
+		<li>Test Driven Development</li>
+		<li>Legacy Code</li>
+		<!--li>Acceptance Test Driven Development</li-->
+		<li>Resources</li>
+	</ul>
+</section>
+<section class="slide">
 	<h2>Why automate tests?</h2>
-	<ul>
-		<li class="slide">Manually testing code is slow</li>
-		<li class="slide">Manually testing code is error-prone</li>
-		<li class="slide">Manually testing code is not scalable</li>
-		<li class="slide">Manually testing code is not repeatable</li>
-		<li class="slide">Releasing code can be scary</li>
+	<ul class="little-bigger">
+		<li>Manually testing code is slow</li>
+		<li>Manually testing code is error-prone</li>
+		<li>Manually testing code is not scalable</li>
+		<li>Manually testing code is not repeatable</li>
+		<li>Releasing code can be scary</li>
 	</ul>
 </section>
 <section class="slide">
 	<h2>Benefits of test automation</h2>
 	<ul>
-		<li class="slide">Reduces new bugs</li>
-		<li class="slide">Reduces bug regressions</li>
-		<li class="slide">Refactoring</li>
-		<li class="slide">Improves your design</li>
-		<li class="slide">Behavior focus</li>
-		<li class="slide">Enables evolutionary design</li>
-		<li class="slide">Reduces fear</li>
-		<li class="slide">Speeds the development process</li>
-		<li class="slide">Tests as documentation</li>
+		<li>Reduces new bugs</li>
+		<li>Reduces bug regressions</li>
+		<li>Refactoring</li>
+		<li>Improves your design</li>
+		<li>Behavior focus</li>
+		<li>Enables evolutionary design</li>
+		<li>Reduces fear</li>
+		<li>Speeds the development process</li>
+		<li>Tests as documentation</li>
 	</ul>
 </section>
 <section class="slide">
@@ -99,8 +130,8 @@
 </section>
 <section class="slide">
 	<h2>Unit Testing</h2>
-	<p>A unit test is...
-	<ul>
+	<p class="little-bigger">A unit test is...
+	<ul class="little-bigger">
 		<li class="slide">...code that <strong>developers write</strong> to test production code</li>
 		<li class="slide">...defines <strong>behavior</strong> of production code</li>
 		<li class="slide">...is <strong>automated</strong> and <strong>repeatable</strong></li>
@@ -110,8 +141,8 @@
 </section>
 <section class="slide">
 	<h2>My Unit test...</h2>
-	<img src="img/teen-spirit.jpg" width="40%" height="40%" style="float:left"/>
-	<ul style="float: right">
+	<img src="img/teen-spirit.jpg" width="30%" height="30%" style="float:left"/>
+	<ul class="little-bigger" style="float: right">
 		<li>...takes too long</li>
 		<li>...needs a database to run</li>
 		<li>...needs a network connection</li>
@@ -120,18 +151,18 @@
 </section>
 <section class="slide">
 	<h2>FIRST</h2>
-	<ul>
+	<ul class="little-bigger">
 		<li><strong>F</strong>ast - less than 1/10 second</li>
 		<li><strong>I</strong>ndependent - test one thing (single assert)</li>
 		<li><strong>R</strong>epeatable - reliably repeatable</li>
 		<li><strong>S</strong>elf-Verifying - red or green</li>
 		<li><strong>T</strong>imely - test written before production code</li>
 	</ul>
-	<p>http://pragprog.com/magazines/2012-01/unit-tests-are-first</p>
+	<p class="reference">http://pragprog.com/magazines/2012-01/unit-tests-are-first</p>
 </section>
 <section class="slide">
 	<h2>Principles of Writing Good Tests</h2>
-	<ul>
+	<ul class="little-bigger">
 		<li>Test everything that could break</li>
 		<li>Test everything that does break</li>
 		<li>New code is guilty until proven innocent</li>
@@ -150,18 +181,21 @@
 	<h1>Test Doubles</h1>
 </section>
 <section class="slide">
+	<h2>Unit testing problem</h2>
+	<p class="little-bigger">The class you want to test has collaborating objects you don't want to test.</p>
+	<img src="img/mock-objects.png" />
+	<a href="http://www.growing-object-oriented-software.com/">Growing Object Oriented Code, Guided by Tests</a>
+</section>
+<section class="slide">
 	<h2>Test Doubles</h2>
-	<ul>
-		<li>CUT has collaborating classes (left)</li>
-		<li>During unit testing, we need to replace these classes (right)</li>
-	</ul>
-	<img src="img/mock-objects.png" width="50%" height="50%" style="float: left"/>
-	<img src="img/mockery.png" width="50%" height="50%" style="float: right"/>
+	<p class="little-bigger">Use test doubles during unit testing!</p>
+	<img src="img/mockery.png" />
+	<a href="http://www.growing-object-oriented-software.com/">Growing Object Oriented Code, Guided by Tests</a>
 </section>
 <section class="slide">
 	<h2>Test Doubles</h2>
 	<img src="img/test-double.gif"/>
-	<ul>
+	<ul class="little-bigger">
 		<li><strong>Dummy</strong> - objects passed around, not used</li>
 		<li><strong>Spy</strong> - records information during test</li>
 		<li><strong>Fake</strong> - fully functionally, w/shortcuts (ie. - in memory database)</li>
@@ -170,22 +204,7 @@
 	</ul>
 </section>
 <section class="slide">
-	<h2>Stubs</h2>
-	<ul>
-		<li></li>
-	</ul>
-</section>
-<section class="slide">
-	<h2>Mocks</h2>
-	<ul>
-		<li></li>
-	</ul>
-</section>
-<section class="slide">
-	<h2>Mocking Frameworks</h2>
-	<ul>
-		<li></li>
-	</ul>
+	<h1>Mocking Example</h1>
 </section>
 
 
@@ -195,24 +214,24 @@
 </section>
 <section class="slide">
 	<h2>What is Test Driven Development?</h2>
-	<ul>
-		<li></li>
-	</ul>
-	Red, Green, Refactor
+	<img src="img/red-green-refactor.jpg"/>
 </section>
 <section class="slide">
 	<h2>Why Test First?</h2>
-	<ul>
-		<li></li>
+	<p class="little-bigger">Provides <strong>feedback</strong> on the quality of:</p>
+	<ul class="little-bigger">
+		<li>implementation (does it work?)</li>
+		<li>design (is it well structured?)</li>
 	</ul>
+	<p class="little-bigger">With TDD, we benefit from the writing of the tests, as well as the running of them.
 </section>
 <section class="slide">
 	<h2>TDD = Faster Delivery</h2>
-	<ul>
-		<li></li>
-	</ul>
+	<img src="img/tdd-is-faster.png"/>
 </section>
-
+<section class="slide">
+	<h1>Test-first Example</h1>
+</section>
 
 
 
@@ -220,18 +239,20 @@
 <section class="slide">
 	<h1>Legacy Code</h1>
 </section>
+<!--
 <section class="slide">
 	<h2>Legacy Code</h2>
-	<ul>
-		<li></li>
+	<ul class="little-bigger">
+		<li>Code that doesn't have unit tests</li>
+		<li>Genera</li>
 	</ul>
 </section>
 <section class="slide">
 	<h2>Problems with Untested Code</h2>
-	<ul>
+	<ul class="little-bigger">
 		<li></li>
 	</ul>
-</section>
+</section>-->
 <section class="slide">
 	<h2>Testable Design = Good Design</h2>
 	<img src="img/mcescher.jpg"/>
@@ -245,50 +266,44 @@
 	<embed src="img/design-coherence.svg" type="image/svg+xml" />
 </section>
 <section class="slide">
-	<h2>Refactor for Testability</h2>
-	<ul>
-		<li></li>
-	</ul>
-</section>
-<section class="slide">
 	<h1>Live Coding</h1>
 </section>
 
-
+<!--
 <section class="slide">
 	<h1>Acceptance Test Driven Development</h1>
 </section>
 <section class="slide">
 	<h2>Acceptance Testing</h2>
-	<ul>
+	<ul class="little-bigger">
 		<li></li>
 	</ul>
 </section>
 <section class="slide">
 	<h2>Synonyms to ATDD</h2>
-	<ul>
+	<ul class="little-bigger">
 		<li></li>
 	</ul>
 </section>
 <section class="slide">
 	<h2>Requirements = Tests</h2>
-	<ul>
+	<ul class="little-bigger">
 		<li></li>
 	</ul>
 </section>
 <section class="slide">
 	<h2>Example</h2>
-	<ul>
+	<ul class="little-bigger">
 		<li></li>
 	</ul>
 </section>
 <section class="slide">
 	<h2>Contact Me</h2>
-	<ul>
+	<ul class="little-bigger">
 		<li></li>
 	</ul>
 </section>
-
+-->
 
 
 
@@ -298,7 +313,7 @@
 </section>
 <section class="slide">
 	<h2>Further Reading</h2>
-	<ul>
+	<ul class="little-bigger">
 		<li></li>
 	</ul>
 </section>
